@@ -1,0 +1,26 @@
+{
+  "name": "trillio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arunprabak/trillio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arunprabak/trillio/issues"
+  },
+  "homepage": "https://github.com/arunprabak/trillio#readme",
+  "dependencies": {
+    "parcel-bundler": "^1.12.3"
+  },
+  "devDependencies": {
+    "sass": "^1.22.9"
+  }
+}
