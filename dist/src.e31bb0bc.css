@@ -28,7 +28,7 @@ grey-dark-3:#999
   font-size: 1.4rem;
   height: 7rem;
   background-color: #ffffff;
-  border-bottom: 1px solid var(--color-grey-light-2);
+  border-bottom: var(--line);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -49,7 +49,27 @@ grey-dark-3:#999
 .hotel-view {
   background-color: #ffffff;
   flex: 1;
-  height: 80rem;
+}
+
+.detail {
+  display: flex;
+  padding: 4.5rem;
+  background-color: var(--color-grey-light-1);
+  border-bottom: var(--line);
+}
+
+.description {
+  font-size: 1.4rem;
+  background: #ffffff;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+  padding: 3rem;
+  flex: 0 0 60%;
+  margin-right: 4.5rem;
+}
+
+.user-reviews {
+  flex: 1;
+  background-color: yellowgreen;
 }
 
 .logo {
@@ -212,7 +232,7 @@ grey-dark-3:#999
 
 .overview {
   display: flex;
-  border-bottom: 1px solid var(--color-grey-light-2);
+  border-bottom: var(--line);
   align-items: center;
 }
 .overview__heading {
@@ -292,6 +312,54 @@ grey-dark-3:#999
     box-shadow: none;
   }
 }
+.paragraph:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+
+.list {
+  list-style: none;
+  margin: 1rem 0;
+  padding: 1rem 0;
+  border-top: var(--line);
+  border-bottom: var(--line);
+  display: flex;
+  flex-wrap: wrap;
+}
+.list__item {
+  flex: 0 0 50%;
+  margin-bottom: 0.7rem;
+}
+.list__item::before {
+  content: "";
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.7rem;
+  background-color: var(--color-primary);
+  -webkit-mask-image: url(/chevron-thin-right.820c57f3.svg);
+  -webkit-mask-size: cover;
+}
+
+.recommend {
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  color: var(--color-dark-grey-3);
+}
+.recommend__count {
+  margin-right: auto;
+}
+.recommend__photo {
+  box-sizing: content-box;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+.recommend__photo:not(:last-child) {
+  margin-right: -1.5rem;
+}
+
 /* Import Roboto Font */
 :root {
   --color-primary: #cb2f64;
@@ -305,6 +373,7 @@ grey-dark-3:#999
   --color-grey-dark-2: #777;
   --color-grey-dark-3: #999;
   --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  --line: 1px solid var(--color-grey-light-2);
 }
 
 * {
