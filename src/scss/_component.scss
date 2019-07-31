@@ -263,8 +263,16 @@
   cursor: pointer;
   transition: all 0.2s;
 
+  & span {
+    margin-left: 3px;
+    transition: margin-left 0.2s;
+  }
+
   &:hover {
     color: var(--color-grey-dark-1);
+    span {
+      margin-left: 8px;
+    }
   }
 
   &:focus {
@@ -354,5 +362,134 @@
     &:not(:last-child) {
       margin-right: -1.5rem;
     }
+  }
+}
+
+///////////////////////////////////////////
+// Reviews
+.review {
+  background: #fff;
+  box-shadow: var(--shadow-light);
+  padding: 3rem;
+  margin-bottom: 3rem;
+  overflow: hidden;
+  &::before {
+    content: "\201C";
+    position: absolute;
+    top: -2rem;
+    left: -1rem;
+    font-size: 20rem;
+    color: var(--color-grey-light-2);
+    z-index: 1;
+  }
+
+  &__text {
+    z-index: 10;
+    position: relative;
+    margin-bottom: 2rem;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+  }
+
+  &__photo {
+    height: 4.5rem;
+    width: 4.5rem;
+    margin-right: 1.5rem;
+    border-radius: 50%;
+  }
+
+  &__user-box {
+    margin-right: auto;
+  }
+
+  &__user-name {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    color: var(--color-grey-dark-1);
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+
+  &__user-date {
+    font-size: 1rem;
+    color: var(--color-grey-dark-3);
+  }
+
+  &__user-rating {
+    color: var(--color-primary);
+    font-size: 2.2rem;
+    font-weight: 300;
+  }
+}
+
+///////////////////////////////////////////
+// CTA
+
+.cta {
+  padding: 3.5rem 0;
+  text-align: center;
+  &__book-now {
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+  }
+}
+
+.btn {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 100px;
+  border: none;
+  background-image: linear-gradient(
+    to right,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+
+  & > * {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__visible {
+    padding: 2rem 7.5rem;
+  }
+
+  &__invisible {
+    position: absolute;
+    padding: 2rem 0rem;
+    left: 0;
+    top: -100%;
+    transition: all 0.2s;
+  }
+
+  &:hover {
+    background-image: linear-gradient(
+      to left,
+      var(--color-primary-light),
+      var(--color-primary-dark)
+    );
+  }
+
+  &:hover &__visible {
+    transform: translateY(100%);
+  }
+
+  &:hover &__invisible {
+    top: 0;
+  }
+
+  &:focus {
+    outline: none;
+    animation: pulsate 1s infinite;
   }
 }
